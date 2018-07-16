@@ -58,7 +58,7 @@ public class SimpleFormChecking {
         Assert.assertEquals("this is a comment", "this is a comment",
                 ele.getText());
 
-    }
+    }//
 
     @Test
     public void num2RadioButtonSelected()
