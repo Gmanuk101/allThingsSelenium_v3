@@ -120,16 +120,14 @@ public class SimpleFormChecking {
         Assert.assertEquals("ms2", driver.findElement(By.id("_valuemultipleselect1")).getText());
         Assert.assertEquals("ms3", driver.findElement(By.id("_valuemultipleselect2")).getText());
 
-//css selector of multiselect box select[multiple='multiple']
-        //tagname of options box "Option"
-//assert id "_valuemultipleselect0"
+
 
 
     }
 
-    /*@AfterClass
+    @AfterClass
     public static void tearDown()
     {
         driver.quit();
-    }*/
+    }
 }
