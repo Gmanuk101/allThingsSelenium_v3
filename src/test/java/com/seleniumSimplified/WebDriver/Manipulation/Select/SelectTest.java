@@ -63,6 +63,16 @@ public class SelectTest {
     }//Submit form with drop down item 5 selected
 
     @Test
+    public void enterComments()
+    {
+        String myCom = "this is my typing";
+        WebElement comBx = driver.findElement(By.cssSelector("textarea[name='comments']"));
+        comBx.sendKeys(myCom);
+        clickSubmitButton();
+
+
+    }
+    @Test
     public void getFileName() throws URISyntaxException
     {
         WebElement fileButton = driver.findElement(By.cssSelector("input[type='file']"));
