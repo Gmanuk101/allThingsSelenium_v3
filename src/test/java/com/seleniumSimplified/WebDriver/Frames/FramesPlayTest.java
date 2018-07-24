@@ -5,17 +5,17 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class FramesPlay {
+public class FramesPlayTest {
 
     private static String frameUrl = "http://compendiumdev.co.uk/selenium/frames/";
     private static WebDriver driver;
 
 
     @BeforeClass
-    public static void start()
+    public static void start() //
     {
         driver = new ChromeDriver();
         driver.get(frameUrl);
