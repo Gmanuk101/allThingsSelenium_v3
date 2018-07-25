@@ -4,6 +4,8 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.Iterator;
 import java.util.Set;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
@@ -18,30 +20,18 @@ public class WindowsTest {
 
         String framesWindowHandle = driver.getWindowHandle();
 
-        assertEquals("Expected only 1 current window", 1, driver.getWindowHandles().size());
-
         driver.switchTo().frame("content");
 
         driver.findElement(By.cssSelector("a[href=\'http://www.seleniumsimplified.com']")).click();
 
-        assertEquals("Expected a New Window opened", 2, driver.getWindowHandles().size());
+        String newWindowHandle = framesWindowHandle;
 
-        Set <String> myWindows = driver.getWindowHandles();
-
-        String newWindowHandle ="";
-
-        for (String aHandle : myWindows) {
-
-            if (!framesWindowHandle.contentEquals(aHandle)) {
-
-                newWindowHandle = aHandle;
-                break;
-//
-            }
-
+        Iterator<String> aHandle = driver.getWindowHandles().iterator();
+        while(newWindowHandle.equals(framesWindowHandle)){
+            newWindowHandle = aHandle.next();
         }
 
-        driver.switchTo().window(newWindowHandle);
+         driver.switchTo().window(newWindowHandle);
 
         assertTrue("Expected Selenium Simplified site",
 
