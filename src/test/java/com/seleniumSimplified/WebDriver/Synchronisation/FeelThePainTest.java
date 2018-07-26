@@ -34,8 +34,13 @@ public class FeelThePainTest {
         WebElement category = driver.findElement(By.id("combo1"));
         WebElement languageUsed = driver.findElement(By.id("combo2"));
         category.findElement(By.cssSelector("option[value='3'")).click();
+
+       // new WebDriverWait(driver, 10).until(
+         //       ExpectedConditions.invisibilityOfElementLocated(By.id("ajaxBusy")));
         new WebDriverWait(driver, 10).until(
-                ExpectedConditions.invisibilityOfElementLocated(By.id("ajaxBusy")));
+                ExpectedConditions.elementToBeClickable(By.cssSelector("option[value='23']")));
+
+
         languageUsed.findElement(By.cssSelector("option[value='23']")).click();
         WebElement codeItButton = driver.findElement(By.cssSelector("input[name='submitbutton']"));
         codeItButton.click();
