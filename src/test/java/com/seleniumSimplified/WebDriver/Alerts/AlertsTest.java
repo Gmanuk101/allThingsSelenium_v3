@@ -27,6 +27,7 @@ public class AlertsTest  {
     {
         WebElement alertBox = driver.findElement(By.cssSelector("input[id='alertexamples']"));
 
+        //random comment
 
 
         String alterAssertMessage = "I am an alert box!";
